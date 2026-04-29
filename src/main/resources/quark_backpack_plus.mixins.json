@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.maplesugar365.quark_backpack_plus.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "BackpackMenuMixin",
+    "BackpackModuleMixin",
+    "CuriosServerPayloadHandlerMixin",
+    "HandleBackpackMessageMixin",
+    "TotemOfHoldingEntityMixin"
+  ],
+  "client": ["BackpackModelMixin"],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
