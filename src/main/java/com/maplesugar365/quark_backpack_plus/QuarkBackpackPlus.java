@@ -19,6 +19,7 @@ import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
 import org.violetmoon.quark.addons.oddities.inventory.slot.BackpackSlot;
 import org.violetmoon.quark.addons.oddities.module.BackpackModule;
 import org.violetmoon.quark.base.handler.SimilarBlockTypeHandler;
+import org.violetmoon.quark.content.management.module.ExpandedItemInteractionsModule;
 import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.client.CuriosRendererRegistry;
 
@@ -39,6 +40,7 @@ public class QuarkBackpackPlus {
 
         @SubscribeEvent
         public static void onItemTooltip(ItemTooltipEvent event) {
+            if (!ExpandedItemInteractionsModule.allowOpeningShulkerBoxes) return;
             ItemStack stack = event.getItemStack();
 
             if (!SimilarBlockTypeHandler.isShulkerBox(stack)) return;
