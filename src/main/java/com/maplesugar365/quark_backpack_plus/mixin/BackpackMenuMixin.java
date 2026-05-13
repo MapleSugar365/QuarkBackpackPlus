@@ -33,8 +33,8 @@ import top.theillusivec4.curios.api.SlotResult;
 @Mixin(BackpackMenu.class)
 public abstract class BackpackMenuMixin extends InventoryMenu {
 
-    public BackpackMenuMixin(Inventory p_39706_, boolean p_39707_, Player p_39708_) {
-        super(p_39706_, p_39707_, p_39708_);
+    public BackpackMenuMixin(Inventory playerInventory, boolean active, Player owner) {
+        super(playerInventory, active, owner);
     }
 
     @Inject(method = "<init>", at = @At("RETURN"), remap = false)

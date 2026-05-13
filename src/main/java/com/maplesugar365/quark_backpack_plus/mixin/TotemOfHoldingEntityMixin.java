@@ -24,8 +24,8 @@ public abstract class TotemOfHoldingEntityMixin extends Entity {
     @Shadow(remap = false)
     protected abstract Player getOwnerEntity();
 
-    public TotemOfHoldingEntityMixin(EntityType<?> p_19870_, Level p_19871_) {
-        super(p_19870_, p_19871_);
+    public TotemOfHoldingEntityMixin(EntityType<?> entityType, Level level) {
+        super(entityType, level);
     }
 
     @ModifyVariable(method = "skipAttackInteraction", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;getItem()Lnet/minecraft/world/item/Item;", ordinal = 0, shift = At.Shift.BEFORE), name = "stack")

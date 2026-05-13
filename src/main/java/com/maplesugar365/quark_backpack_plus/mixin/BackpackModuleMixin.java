@@ -28,9 +28,9 @@ public abstract class BackpackModuleMixin {
     private static void isEntityWearingBackpack(Entity entity, ItemStack stack, CallbackInfoReturnable<Boolean> cir) {
         if (entity instanceof LivingEntity livingEntity) {
             Optional<SlotResult> result = CuriosApi.getCuriosInventory(livingEntity).map(inv -> inv.findFirstCurio(BackpackModule.backpack)).orElse(Optional.empty());
-            if (result.isPresent() && result.get().stack() == stack) cir.setReturnValue(true);
+            if (result.isPresent() && ItemStack.isSameItemSameComponents(result.get().stack(), stack))
+                cir.setReturnValue(true);
         }
     }
-
 
 }
