@@ -42,7 +42,6 @@ public class QuarkBackpackCuriosRenderer implements ICurioRenderer {
         }
 
         boolean hasFoil = stack.hasFoil();
-
         int fallbackColor = stack.is(ItemTags.DYEABLE)
             ? FastColor.ARGB32.opaque(DyedItemColor.getOrDefault(stack, DyedItemColor.LEATHER_COLOR))
             : 0xFFFFFFFF;
